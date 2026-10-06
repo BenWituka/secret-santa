@@ -66,7 +66,7 @@ async function aesGcmDecode(encrypted, password, iv, salt) {
       hexStringToArrayBuffer(encrypted)
     );
   } catch {
-    return "incorrect password";
+    return "Incorrect password!";
   }
 
   return decoder.decode(decrypted);
@@ -160,9 +160,14 @@ async function displaySecret() {
   const i = +chooserSelect.value;
   const password = passwordInput.value;
 
-  secretDiv.textContent =
+  if (password){
+    secretDiv.textContent =
     await aesGcmDecode(secrets[i].encrypted, password,
       secrets[i].iv, secrets[i].salt);
+  }
+  else {
+    secretDiv.textContent = "Type in password!";
+  }
 }
 
 const chooserSelect = document.querySelector("#chooser");
