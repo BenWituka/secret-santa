@@ -1,5 +1,5 @@
 * {
-    font-size: 48px;
+    font-size: 40px;
     font-family: sans-serif;
     font-weight: bold;
     background-color: rgb(125, 212, 125);
@@ -23,6 +23,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+#password {
+    max-width: 95vw;
 }
 
 #secret {
